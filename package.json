@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "start": "ts-node src/index.ts",
-    "build": "prisma generate && tsc ",
+    "postinstall": "npx prisma generate",
+    "build": "npx prisma generate && tsc ",
     "ts.check": "tsc --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
