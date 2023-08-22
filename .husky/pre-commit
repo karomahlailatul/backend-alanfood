@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+git add .
+git add --all .
+# yarn lint-staged || (
+#     echo '❌ Sometthing went wrong';
+#     false;
+# )
+yarn run build  || (
+    echo '❌ Sometthing went wrong';
+    false;
+)
+git add .
+git add --all .
+echo 'LGTM Dude 🚀'
